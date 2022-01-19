@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import ScaleLoader from "react-spinners/ScaleLoader"
+import {ScaleLoader} from "react-spinners"
 import FilmCard from '../components/FilmCard';
 
 function HomePage() {

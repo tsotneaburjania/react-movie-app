@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import {useLocation, Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import ScaleLoader from "react-spinners/ScaleLoader"
+import {ScaleLoader} from "react-spinners"
 
 import '../styles/filmdetailpage.scss'
 
