@@ -1,0 +1,105 @@
+@import"./mixins.scss";
+
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, p {
+    color: yellow;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: black;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.generalButton {
+    outline: none;
+    background-color: black;
+    border: 1px solid yellow;
+    color: yellow;
+    display: block;
+    margin: auto;
+    font-size: 25px;
+    padding: 20px 40px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+        background-color: yellow;
+        color: black;
+    }
+}
+
+.cardListHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 50px;
+    gap: 1rem;
+
+    & .filmCardHolder {
+        box-sizing: border-box;
+        max-width: 350px;
+        border: 1px solid yellow;
+        transition: 0.4s;
+
+        & img {
+            max-width: 100%;
+            border-bottom: 1px solid yellow;
+        }
+
+        & .thumbTexts {
+            padding: 20px;
+
+            & h3 {
+                margin-top: 0;
+            }
+            
+            & p {
+                margin-bottom: 0;
+            }
+
+            & .voteScore {
+                background-color: rgb(21, 36, 36);
+                width: fit-content;
+                padding: 5px 30px 5px 30px;
+                border-radius: 10px;
+            }
+        }
+
+        &:hover {
+            background-color: yellow;
+            transform: scale(1,1);
+            max-width: 450px;
+            & h3, h5, p {
+                color: black;
+            }
+
+            @include scr1440px {
+                max-width: 350px;
+                transform: none;
+            }
+        }
+    }
+}
+
+.footer {
+
+    & p {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    & a {
+        color: rgb(87, 87, 1);
+    }
+}

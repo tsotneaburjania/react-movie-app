@@ -1,0 +1,111 @@
+@import"./mixins.scss";
+
+.mainDiv {
+    height: 55vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-sizing: border-box;
+
+
+    & .overlay {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 2;
+    }
+
+    & .filmTitles {
+        z-index: 3;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-left: 100px;
+        margin-bottom: 50px;
+
+        & h1 {
+            margin: 0;
+        }
+    } 
+}
+
+.filmSpecs {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 0px 50px 0px;
+    border-top: 50px dashed rgba(255, 255, 0, 0.7);
+    gap: 1rem;
+
+    @include mobile { 
+        flex-direction: column-reverse;
+        border-top: 1px solid yellow;
+        border-bottom: 1px solid yellow;
+    }
+
+    & .quickFacts, .synopsis{
+        border: 1px solid yellow;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    & .synopsis {
+        position: relative;
+        flex: 3;
+
+        @include scr1440px { 
+            border-right: none;
+        }
+
+        @include tablet { 
+            flex: 2;
+        }
+
+        @include mobile { 
+            flex: 1;
+            border-left: none;
+            border-top: none;
+            text-align: center;
+        }
+
+        & h2 {
+            margin-top: 0;
+        }
+
+        & .goBackBtn {
+            position: absolute;
+            bottom: 0;
+            display: block;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include mobile { 
+                position: static;
+                transform: none;
+                left: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    & .quickFacts {
+        flex: 1;
+
+        @include scr1440px { 
+            border-left: none;
+        }
+
+        @include tablet { 
+            flex: 1;
+        }
+
+        @include mobile {
+            display: block;
+            margin: auto;
+            width: fit-content;
+            border: none;
+        }
+    }
+}
